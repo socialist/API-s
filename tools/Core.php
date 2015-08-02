@@ -2,7 +2,7 @@
 
 namespace tools;
 
-class Core
+abstract class Core
 {
 	const ARRAY_RESULT = 0;
 	const JSON_RESULT  = 1;
@@ -31,6 +31,8 @@ class Core
 		$this->urlAPI = $url;
 	}
 
+	abstract function buildUrl($request);
+
 	protected function request($url, $method = 'GET', $resultType = 0)
 	{
 		if(!in_array($method, $this->methods)) {
@@ -51,7 +53,7 @@ class Core
 		$result = curl_exec($curl);
 
 		if($result === false) {
-			throw new Exception(curl_error($curl), curl_errno($curl));
+			throw new \Exception(curl_error($curl), curl_errno($curl));
 		}
 
 		curl_close($curl);
