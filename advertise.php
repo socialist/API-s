@@ -7,7 +7,7 @@ use advertise\Advertise;
 
 $adv = new Advertise('889613f71009111b');
 $adv->setParams(['order_id'=>'CD1580-2', 'client_id'=>'8900515131', 'amount'=>'2054.15']);
-//var_dump($adv);
+
 try {
 	echo $adv->noticeImage();
 	echo $adv->noticeScript();
