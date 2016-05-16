@@ -17,5 +17,6 @@ try {
 	print_r($adv->setStatusRequest(Advertise::STATUS_TAKEN, 'akjsdbvmzhbdjfhvbxmhbfv'));
 } catch(Exception $e) {
 	echo $e->getMessage();
+	exit;
 }
 ?>
